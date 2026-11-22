@@ -3,6 +3,8 @@
 采集时间：2026-11-02（Asia/Shanghai）
 工作区：`<REPO_ROOT>`
 
+> 公开仓库中的 `<REPO_ROOT>`、`<TOOLCHAINS>`、`<ASCII_BUILD_DIR>` 是为隐私清洗保留的路径占位符，不是缺失文件。外部构建请按 [README 的“从源码构建”](../../README.md#从源码构建) 替换成自己的实际路径。
+
 ## 1. 主机
 
 | 项目 | 实际值 |

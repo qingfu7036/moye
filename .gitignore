@@ -1,0 +1,40 @@
+# Local caches and downloaded research material
+/cache/
+
+# Phase 0 build products (source and checksums stay in the repo)
+/artifacts/phase-0/*.apk
+/artifacts/phase-0/*.zip
+/spikes/**/build/
+/spikes/**/.dart_tool/
+/spikes/**/.flutter-plugins
+/spikes/**/.flutter-plugins-dependencies
+/spikes/**/windows/flutter/ephemeral/
+/spikes/**/android/.gradle/
+/spikes/**/android/local.properties
+
+# Editors / OS
+.idea/
+.vscode/
+*.iml
+Thumbs.db
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Phase 1 root application
+/.dart_tool/
+/build/
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/windows/flutter/ephemeral/
+/android/.gradle/
+/android/local.properties
+/android/app/.cxx/
+/android/app/build/
+/artifacts/phase-1/*.apk
+/artifacts/phase-2/*.apk
+
+# Local Windows distribution folder
+/dist/

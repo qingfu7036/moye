@@ -1,0 +1,47 @@
+name: moye
+description: "MOYE 墨页 — local-first reading and personal knowledge library."
+publish_to: "none"
+version: 1.4.0+8
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  archive: ^4.6.0
+  crypto: ^3.0.8
+  collection: ^1.19.1
+  file_picker: ^13.3.2
+  flutter_tts: ^4.2.5
+  flutter_riverpod: ^3.4.3
+  go_router: ^18.1.2
+  html: ^0.15.6
+  scrollable_positioned_list: ^0.3.8
+  intl: ^0.20.3
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  pdfrx: ^2.11.0
+  image: ^4.12.0
+  sqlite3: ^3.8.0
+  uuid: ^4.6.0
+  xml: ^7.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+hooks:
+  user_defines:
+    sqlite3:
+      source:
+        android: system
+        default: sqlite3

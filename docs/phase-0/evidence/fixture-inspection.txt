@@ -1,0 +1,20 @@
+Running build hooks...Running build hooks...EPUB_TITLE=墨页 EPUB3 验证样本
+EPUB_AUTHOR=MOYE Phase 0
+EPUB_CHAPTERS=2
+EPUB_TOC=第一章 动态排版 | 第二章 定位与标注
+EPUB_CHAPTER_0=第一章 动态排版
+EPUB_MARKER_BLOCK=2
+EPUB_MARKER_CFI=epubcfi(/6/2[ch1]!/4/2/6/1:4)
+EPUB_MARKER_TEXT=EPUB CFI 是跨阅读器定位章节内容的标准方式。本段包含唯一文本 MOYE-EPUB-CFI-ANCHOR。
+EPUB_CHAPTER_1=第二章 定位与标注
+EPUB_COVER_BYTES=12715
+DOCX_TITLE=墨页 DOCX 验证样本
+DOCX_AUTHOR=MOYE Phase 0
+DOCX_BLOCKS=23
+DOCX_KINDS=paragraph,paragraph,heading1,paragraph,heading2,paragraph,heading1,listItem,listItem,listItem,listItem,paragraph,heading1,table,heading1,paragraph,image,paragraph,heading1,paragraph,heading1,paragraph,paragraph
+DOCX_MARKER_PATH=body/p[20]
+DOCX_MARKER_OFFSET=7
+DOCX_MARKER_TEXT=唯一段落标记：MOYE-DOCX-PARAGRAPH-ANCHOR。
+DOCX_LINKS=Flutter 官方网站=>https://flutter.dev
+DOCX_TABLE=项目/状态/说明 ; PDF/通过/PDFium 文字选择 ; EPUB/验证中/CFI 与重排
+DOCX_IMAGES=1

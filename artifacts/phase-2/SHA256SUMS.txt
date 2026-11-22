@@ -1,0 +1,1 @@
+c7b48077b495aa6319bd2f0b203fbc80b724b2a37a7c7acaebd7c25bb3c1bf3d *artifacts/phase-2/moye-phase2-schema5-debug.apk

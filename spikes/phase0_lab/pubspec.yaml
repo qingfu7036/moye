@@ -1,0 +1,33 @@
+name: moye_phase0
+description: MOYE Phase 0 technical risk-reduction spikes. Not the V1 product UI.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  archive: ^4.6.0
+  flutter_tts: ^4.2.5
+  html: ^0.15.4
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  pdfrx: ^2.11.0
+  scrollable_positioned_list: ^0.3.8
+  xml: ^7.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fixtures/

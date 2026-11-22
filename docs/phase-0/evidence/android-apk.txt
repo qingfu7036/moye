@@ -1,0 +1,35 @@
+$ sha256sum artifacts/phase-0/moye_phase0-debug.apk
+4ec560ec26a15da5c6154666af5f33e16b11c5fbc13f2422162b7dfb70ca7c8a *artifacts/phase-0/moye_phase0-debug.apk
+
+$ aapt2 dump badging <apk>
+package: name='app.moye.moye_phase0' versionCode='1' versionName='0.1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'24'
+targetSdkVersion:'36'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='app.moye.moye_phase0.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'墨页 Phase 0'
+application-label-af:'墨页 Phase 0'
+application-label-am:'墨页 Phase 0'
+
+$ unzip -l <apk> | grep lib/...
+    97920  1981-01-01 01:01   lib/arm64-v8a/libdartjni.so
+ 38846424  1981-01-01 01:01   lib/arm64-v8a/libflutter.so
+  6598376  1981-01-01 01:01   lib/arm64-v8a/libpdfium.so
+     5240  1981-01-01 01:01   lib/arm64-v8a/libpdfrx_pdfium_gate.so
+    57572  1981-01-01 01:01   lib/armeabi-v7a/libdartjni.so
+ 33159780  1981-01-01 01:01   lib/armeabi-v7a/libflutter.so
+  4324288  1981-01-01 01:01   lib/armeabi-v7a/libpdfium.so
+     3572  1981-01-01 01:01   lib/armeabi-v7a/libpdfrx_pdfium_gate.so
+    99936  1981-01-01 01:01   lib/x86_64/libdartjni.so
+ 40107168  1981-01-01 01:01   lib/x86_64/libflutter.so
+  6886848  1981-01-01 01:01   lib/x86_64/libpdfium.so
+     5160  1981-01-01 01:01   lib/x86_64/libpdfrx_pdfium_gate.so
+
+$ aapt2 dump xmltree <apk> --file AndroidManifest.xml | grep TTS_SERVICE
+              E: action (line=25)
+                A: http://schemas.android.com/apk/res/android:name(0x01010003)="android.intent.action.TTS_SERVICE" (Raw: "android.intent.action.TTS_SERVICE")
+          E: intent (line=27)
+              E: action (line=28)
+                A: http://schemas.android.com/apk/res/android:name(0x01010003)="android.intent.action.PROCESS_TEXT" (Raw: "android.intent.action.PROCESS_TEXT")
+
+APK bytes: 188673994

@@ -1,0 +1,1 @@
+6c4a632b89448e92f48a126a845d963bb6b4b54933f8e430b21a637933800603 *artifacts/phase-2/moye-phase2-schema5-release.apk

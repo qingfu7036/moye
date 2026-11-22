@@ -1,0 +1,5 @@
+墨页把阅读、标注与知识整理放在同一个本地空间。
+每一段文字都应该可以被重新找到。
+TTS synchronization is validated at sentence level, not word level.
+暂停后继续朗读，应该回到当前句子。
+最后一句用于验证播放结束和位置保存。

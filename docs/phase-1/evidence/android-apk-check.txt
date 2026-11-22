@@ -1,0 +1,26 @@
+MOYE Phase 3.0 Android APK 检查
+APK: artifacts/phase-1/moye_phase1-debug.apk
+size_bytes: 200759281
+sha256: ad47bb2b7fcf22a759792f179344bee7abb39396a45870301c82f629a80a4bfb
+
+native_libraries:
+  lib/arm64-v8a/libVkLayer_khronos_validation.so
+  lib/arm64-v8a/libdartjni.so
+  lib/arm64-v8a/libflutter.so
+  lib/arm64-v8a/libpdfium.so
+  lib/arm64-v8a/libpdfrx_pdfium_gate.so
+  lib/arm64-v8a/libsqlite3.so
+  lib/armeabi-v7a/libdartjni.so
+  lib/armeabi-v7a/libflutter.so
+  lib/armeabi-v7a/libpdfium.so
+  lib/armeabi-v7a/libpdfrx_pdfium_gate.so
+  lib/armeabi-v7a/libsqlite3.so
+  lib/x86_64/libdartjni.so
+  lib/x86_64/libflutter.so
+  lib/x86_64/libpdfium.so
+  lib/x86_64/libpdfrx_pdfium_gate.so
+  lib/x86_64/libsqlite3.so
+
+zipalign: Verification successful (zipalign -c -P 16 -v 4)
+ABI filter: arm64-v8a, armeabi-v7a, x86_64
+PDFium: bundled for PDF covers and PDF reader

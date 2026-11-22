@@ -1,0 +1,6 @@
+timestamp=2026-11-03T23:29:11.0035629+08:00
+pid=39876
+hasExited=False
+titleLength=2
+titleCodePoints=22696,39029
+stoppedAfterCheck=true

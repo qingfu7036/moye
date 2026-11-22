@@ -1,0 +1,1 @@
+4ec560ec26a15da5c6154666af5f33e16b11c5fbc13f2422162b7dfb70ca7c8a  artifacts/phase-0/moye_phase0-debug.apk

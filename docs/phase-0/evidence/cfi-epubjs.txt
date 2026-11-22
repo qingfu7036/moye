@@ -1,0 +1,5 @@
+input=epubcfi(/6/2[ch1]!/4/2/6/1:4)
+CFI_VALID=true
+toString=epubcfi(/6/2[ch1]!/4/2/6/1:4)
+spinePos=0
+path={"steps":[{"type":"element","index":1,"id":null},{"type":"element","index":0,"id":null},{"type":"element","index":2,"id":null},{"type":"text","index":0,"id":null}],"terminal":{"offset":4}}

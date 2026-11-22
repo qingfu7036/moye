@@ -1,0 +1,75 @@
+=== OS ===
+Caption=Microsoft Windows 11 ��ͥ�� ���İ�
+Version=10.0.26200
+Build=26200
+Arch=64 λ
+InstallDate=02/01/2025 09:30:42
+=== CPU/MEM/DISK ===
+CPU=12th Gen Intel(R) Core(TM) i7-12700H
+Cores=14
+Threads=20
+RAM_GB=15.7
+DiskFree_GB=22.1
+=== FLUTTER ===
+Flutter 3.47.9 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision c197ca5199 (4 days ago) • 2026-10-29 10:10:20 -0400
+Engine • hash 9e025265bef30b838c0c1b68cad19decf97048f2 (revision 89c39edfdf) (5 days ago) • 2026-10-27 19:51:20.000Z
+Tools • Dart 3.13.7 • DevTools 2.60.0
+=== DOCTOR ===
+[√] Flutter (Channel stable, 3.47.9, on Microsoft Windows [版本 10.0.26200.9711], locale zh-CN) [471ms]
+    • Flutter version 3.47.9 on channel stable at <HOME>\.kun\toolchains\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision c197ca5199 (4 days ago), 2026-10-29 10:10:20 -0400
+    • Engine revision 89c39edfdf
+    • Dart version 3.13.7
+    • DevTools version 2.60.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-record-use, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[√] Windows Version (Windows 11 or higher, 25H2, 2009) [1,132ms]
+
+[√] Android toolchain - develop for Android devices (Android SDK version 36.0.0) [2.7s]
+    • Android SDK at <HOME>\.kun\toolchains\android-sdk
+    • Emulator version unknown
+    • Platform android-36, build-tools 36.0.0
+    • ANDROID_SDK_ROOT = <TOOLCHAINS>/android-sdk
+    • Java binary at: <TOOLCHAINS>/jdk\bin\java
+      This JDK is specified by the JAVA_HOME environment variable.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)
+    • All Android licenses accepted.
+
+[√] Chrome - develop for the web [329ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[√] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.2.6) [328ms]
+    • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    • Visual Studio Community 2022 version 17.2.32630.192
+    • Windows 10 SDK version 10.0.19041.0
+
+[√] Connected device (3 available) [2.6s]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [版本 10.0.26200.9711]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 156.0.8078.74
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 156.0.4314.58
+
+[☠] Network resources (the doctor check crashed)
+    X Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    X Exception: Network resources exceeded maximum allowed duration of 0:04:30.000000
+    • 
+
+! Doctor found issues in 1 category.
+=== JAVA ===
+openjdk version "17.0.20.1" 2026-08-18
+OpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)
+OpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)
+=== SDK ===
+Loading package information...                                                  Loading local repository...                                                     [=========                              ] 25% Loading local repository...       [=========                              ] 25% Fetch remote repository...        [=======================================] 100% Fetch remote repository...       
+Installed packages:
+  Path                 | Version       | Description                      | Location            
+  -------              | -------       | -------                          | -------             
+  build-tools;36.0.0   | 36.0.0        | Android SDK Build-Tools 36       | build-tools\36.0.0  
+  cmake;3.22.1         | 3.22.1        | CMake 3.22.1                     | cmake\3.22.1        
+  ndk;28.2.13676358    | 28.2.13676358 | NDK (Side by side) 28.2.13676358 | ndk\28.2.13676358   
+  platform-tools       | 37.0.1        | Android SDK Platform-Tools       | platform-tools      
+  platforms;android-35 | 2             | Android SDK Platform 35          | platforms\android-35
+  platforms;android-36 | 2             | Android SDK Platform 36          | platforms\android-36
+

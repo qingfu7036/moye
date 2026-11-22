@@ -49,43 +49,61 @@ Windows + Android 的本地优先数字阅读与个人知识管理软件。
 
 明确尚未实现：独立笔记、书架/标签、阅读统计、完整 EPUB CSS/复杂脚注/跨节点 CFI。`.moye` 备份/恢复已实现，详见 [备份设计](docs/backup.md)。DOCX 阅读器按范围决定不做；DOCX 仍可导入。
 
-## 复现
+## 从源码构建
 
-工具链安装在项目外：`<TOOLCHAINS>`。版本与安装细节见 [环境报告](docs/phase-0/environment.md)。
+仓库只包含源码，**不包含** Flutter SDK、JDK、Android SDK、Visual Studio 或 NuGet。第一次构建需要联网下载 Dart、Gradle 和 Maven 依赖。
+
+### 环境要求
+
+| 组件 | 要求 |
+|---|---|
+| Flutter | 3.47.9 stable（Dart 3.13.7）已实测；`pubspec.yaml` 要求 Dart `^3.13.7` |
+| Windows | Visual Studio 2022，安装“使用 C++ 的桌面开发”和 Windows 10/11 SDK；建议开启 Windows 开发者模式（pdfrx 的 native assets 使用符号链接） |
+| Android | JDK 17；Android SDK Platform 36、Build-Tools 36.0.0、NDK 28.2.13676358；已接受 SDK licenses |
+| NuGet CLI | Windows 构建 `flutter_tts` 需要 |
+| 路径 | Android 必须使用**纯 ASCII 路径**；中文或全角字符路径会导致 Gradle/NDK 中间产物缺失 |
+
+安装完成后先运行 `flutter doctor -v`，确认 Windows 桌面和 Android 工具链均通过。详细版本记录见 [环境报告](docs/phase-0/environment.md)。
 
 ### Windows
 
-```bash
-export TOOLS="<TOOLCHAINS>"
-export PATH="$TOOLS/flutter/bin:$TOOLS/jdk/bin:$TOOLS/nuget:$PATH"
-
+```powershell
+git clone https://github.com/qingfu7036/moye.git
+cd moye
 flutter pub get
 dart analyze lib test integration_test
 flutter test
-flutter test integration_test/phase1_library_test.dart -d windows
-flutter build windows --debug
+flutter build windows --release
 
-# 启动（调试构建）
-./build/windows/x64/runner/Debug/moye.exe
+# 产物：build\windows\x64\runner\Release\moye.exe
 ```
+
+`flutter analyze` 在含中文的路径下可能因 analysis server 崩溃返回 255；这是工具链限制，改用上面的 `dart analyze`。
 
 ### Android
 
-Android 构建必须从 **ASCII 路径副本**执行。仓库路径 `MOYE（墨页）` 含中文时，Gradle/NDK 会产生缺失中间产物；`android.overridePathCheck=true` 只能绕过第一层检查，不能解决 NDK 问题。
-
 ```bash
-# 在 ASCII 目录准备源码副本后
-export TOOLS="<TOOLCHAINS>"
-export PATH="$TOOLS/flutter/bin:$TOOLS/jdk/bin:$TOOLS/nuget:$PATH"
-export JAVA_HOME="$TOOLS/jdk"
-export ANDROID_SDK_ROOT="$TOOLS/android-sdk"
-export ANDROID_HOME="$TOOLS/android-sdk"
-
+# 必须使用纯 ASCII 路径，例如 C:\dev\moye
+git clone https://github.com/qingfu7036/moye.git /c/dev/moye
+cd /c/dev/moye
 flutter pub get
 flutter build apk --debug
+
+# 产物：build/app/outputs/flutter-apk/app-debug.apk
 ```
 
-构建产物：`build/app/outputs/flutter-apk/app-debug.apk`。Phase 1 的最终 APK 另存于 `artifacts/phase-1/moye_phase1-debug.apk`。
+Android 首次构建在验证机上约 13–14 分钟，主要耗时在 Gradle/Maven 下载和原生库编译，具体取决于网络。debug APK 约 192 MB（包含三套 ABI），release APK 约 88 MB。**构建成功不等于 Android 真机验收通过**；当前仍未完成真机运行验证。
+
+### 干净 clone 验证记录
+
+2026-11-22，在纯 ASCII 目录重新 clone commit `f87b780` 后实测：
+
+- `flutter pub get` 成功；`dart analyze lib test integration_test` 为 0 问题。
+- `flutter test`：42 个测试全部通过。
+- `flutter build windows --release`：154 秒构建成功。
+- `flutter build apk --debug`：成功生成约 192 MB 的 APK，ZIP 结构校验通过。
+
+这次验证只证明“新环境可以下载、编译和测试”，不代表 Android 真机运行已经验收。
 
 ### SQLite 的 Android 构建说明
 
@@ -163,6 +181,10 @@ Debug APK 是通用包，包含三套 ABI；Release APK 是当前更小的安装
 - Phase 1：Windows 可执行验收通过；Android 构建通过、运行待验证。**等待用户真机验收后再确认关闭。**
 - 进入 Phase 2 前，建议先完成 Android 真机上的启动、导入、重开、删除；若无法完成，需由用户明确接受“仅构建验证”的风险。
 - Phase 2 的第一切片应是“打开已导入 PDF → 渲染 → 恢复位置 → 关闭重开仍恢复”，不要同时混入标注或 TTS。
+
+## 许可
+
+本项目采用 [MIT 许可证](LICENSE)，Copyright (c) 2026 qingfu7036。你可以自由使用、修改和再分发，只需保留版权与许可声明。
 
 ---
 
